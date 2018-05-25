@@ -17,13 +17,19 @@
       </thead>
       <tbody>
         <tr
-          v-for="mem in members" :key="mem.id"
+          v-for="(mem, i) in members" :key="mem.id"
           :class="{gray: mem.id % 2}"
           class="text"
         >
-          <td>{{ mem.id }}</td>
+          <td>{{ i + 1 }}</td>
           <td>{{ mem.name }}</td>
           <td>{{ mem.org }}</td>
+        </tr>
+        <tr v-for="(item, k) in {id: 1, name: 'Somsak'}" :key="k" >
+          <td>{{ k }} = {{ item }}</td>
+        </tr>
+        <tr v-for="i in 10" :key="i">
+          <td>{{ i + 10 }}</td>
         </tr>
       </tbody>
     </table>
@@ -31,6 +37,7 @@
 </template>
 <script>
 export default {
+  layout: 'full',
   data() {
     return {
       name: 'Somsak Lim',
