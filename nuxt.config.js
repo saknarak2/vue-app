@@ -30,8 +30,8 @@ module.exports = {
   ],
   loading: { color: '#3B8070' },
   manifest: {
-    name: '',
-    short_name: '',
+    name: 'My App Long Name',
+    short_name: 'My App',
     theme_color: '#3B8070',
   },
   icon: {
