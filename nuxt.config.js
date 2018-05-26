@@ -30,7 +30,13 @@ module.exports = {
   ],
   loading: { color: '#3B8070' },
   manifest: {
+    name: '',
+    short_name: '',
     theme_color: '#3B8070',
+  },
+  icon: {
+    iconSrc: 'static/icon.png',
+    sizes: [32, 64, 96, 192, 256, 512, 1024],
   },
   head: {
     title: 'APP TITLE',
@@ -51,6 +57,7 @@ module.exports = {
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icons/favicon.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icons/favicon.png' },
       { rel: 'apple-touch-icon', href: '/icons/favicon.png' },
+      { rel: 'apple-touch-startup-image', href: '/images/launch-2048x2732.png', media: '(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)' },
     ],
   },
 }

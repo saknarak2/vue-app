@@ -15,6 +15,11 @@
       </v-radio-group>
       <v-btn @click="doSave">SAVE</v-btn>
     </div>
+    <student-box
+      v-for="st in list" :key="st.code" :student="st"
+      @phone="onPhone"
+      @click="onClick"
+    />
     <table>
       <tr>
         <td>รหัส</td>
@@ -30,9 +35,19 @@
   </div>
 </template>
 <script>
+import StudentBox from '~/components/student-box.vue'
+
 export default {
+  components: {
+    StudentBox,
+  },
   data() {
     return {
+      list: [
+        { code: '0001', firstName: 'Name1', lastName: 'Lastname1', room: '1/1' },
+        { code: '0002', firstName: 'Name2', lastName: 'Lastname2', room: '1/1' },
+        { code: '0003', firstName: 'Name3', lastName: 'Lastname3', room: '1/1' },
+      ],
       room: '3',
     }
   }, // data
@@ -90,6 +105,12 @@ export default {
         // SAVE ไม่เสร็จ
         console.log('save ไม่สำเร็จนะ')
       }
+    },
+    onPhone() {
+      console.log('student list phone')
+    },
+    onClick() {
+      console.log('student list click')
     },
   },
 }
